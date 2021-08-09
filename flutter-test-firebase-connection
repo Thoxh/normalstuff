@@ -1,0 +1,10 @@
+FloatingActionButton(
+            onPressed: () => FirebaseFirestore.instance
+                .collection("Test")
+                .add({"test": "Test Erfolgreich"}).then((result) {
+              final snackBar =
+                  SnackBar(content: Text('Eintrag wurde hinzugefügt.'));
+              ScaffoldMessenger.of(context).showSnackBar(snackBar);
+            }),
+            child: Icon(Icons.add),
+          )
